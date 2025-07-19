@@ -46,5 +46,5 @@ pct exec $CONTAINER_ID -- bash -c 'cd $APP_DIR && docker compose ps'
 EOF
 
 echo -e "${GREEN}✅ Deployment completed!${NC}"
-echo -e "${GREEN}🌐 VimGenius should be available at: http://192.168.50.254:3000${NC}"
+echo -e "${GREEN}🌐 VimGenius should be available at: http://192.168.50.254:3001${NC}"
 echo -e "${YELLOW}💡 Give it a minute to fully start up if it's not immediately available${NC}"
