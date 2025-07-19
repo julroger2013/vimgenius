@@ -1,0 +1,1115 @@
+=> Booting Puma
+=> Rails 7.1.5.1 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 6.6.0 ("Return to Forever")
+* Ruby version: ruby 3.3.8 (2025-04-09 revision b200bad6cd) [arm64-darwin24]
+*  Min threads: 0
+*  Max threads: 5
+*  Environment: development
+*          PID: 50800
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2025-07-19 16:11:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as */*
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mecmcchwjmhwgdjtamndqngtfqkafmkevtpgvbqmshgcvtdrtjo@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mecmcchwjmhwgdjtamndqngtfqkafmkevtpgvbqmshgcvtdrtjo@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "remember_token", "password_reset_token", "session_token", "created_at", "updated_at", "temporary") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "mecmcchwjmhwgdjtamndqngtfqkafmkevtpgvbqmshgcvtdrtjo@example.com"], ["password_digest", "[FILTERED]"], ["remember_token", nil], ["password_reset_token", "[FILTERED]"], ["session_token", nil], ["created_at", "2025-07-19 21:11:46.132042"], ["updated_at", "2025-07-19 21:11:46.132042"], ["temporary", true]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mAuthem::Session Create (0.7ms)[0m  [1m[32mINSERT INTO "authem_sessions" ("role", "subject_type", "subject_id", "token", "expires_at", "ttl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["role", "user"], ["subject_type", "User"], ["subject_id", 3], ["token", "kXYCOImCiKAVjE6J0odXlDJT_cu6x9bVwvPS_Txa7-7gBGdS5YFrLUtoqOfo"], ["expires_at", "2025-08-18 21:11:46.138897"], ["ttl", 2592000], ["created_at", "2025-07-19 21:11:46.138865"], ["updated_at", "2025-07-19 21:11:46.138865"]]
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (Duration: 2.5ms | Allocations: 12312)
+  Rendered shared/_login.html.haml (Duration: 1.1ms | Allocations: 5273)
+  Rendered layout layouts/application.html.haml (Duration: 154.6ms | Allocations: 152544)
+Completed 200 OK in 376ms (Views: 155.8ms | ActiveRecord: 22.7ms | Allocations: 194897)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-19 16:12:44 -0500
+Processing by HomeController#index as HTML
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zxlqczfmeljbkyysavlivtqotrhcedmfmdfpxdwyyjikhozqtvx@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zxlqczfmeljbkyysavlivtqotrhcedmfmdfpxdwyyjikhozqtvx@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "remember_token", "password_reset_token", "session_token", "created_at", "updated_at", "temporary") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "zxlqczfmeljbkyysavlivtqotrhcedmfmdfpxdwyyjikhozqtvx@example.com"], ["password_digest", "[FILTERED]"], ["remember_token", nil], ["password_reset_token", "[FILTERED]"], ["session_token", nil], ["created_at", "2025-07-19 21:12:44.643766"], ["updated_at", "2025-07-19 21:12:44.643766"], ["temporary", true]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mAuthem::Session Create (0.7ms)[0m  [1m[32mINSERT INTO "authem_sessions" ("role", "subject_type", "subject_id", "token", "expires_at", "ttl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["role", "user"], ["subject_type", "User"], ["subject_id", 4], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["expires_at", "2025-08-18 21:12:44.645769"], ["ttl", 2592000], ["created_at", "2025-07-19 21:12:44.645749"], ["updated_at", "2025-07-19 21:12:44.645749"]]
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (Duration: 0.1ms | Allocations: 107)
+  Rendered shared/_login.html.haml (Duration: 0.1ms | Allocations: 158)
+  Rendered layout layouts/application.html.haml (Duration: 3.7ms | Allocations: 8640)
+Completed 200 OK in 213ms (Views: 3.8ms | ActiveRecord: 4.7ms | Allocations: 15131)
+
+
+Started GET "/start" for 127.0.0.1 at 2025-07-19 16:12:50 -0500
+Processing by HomeController#start as HTML
+  [1m[36mAuthem::Session Load (0.5ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:12:51.144140' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.5ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:12:51.147044"], ["updated_at", "2025-07-19 21:12:51.147701"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering home/start.html.haml within layouts/application
+  Rendered home/start.html.haml within layouts/application (Duration: 3.4ms | Allocations: 3748)
+  Rendered shared/_login.html.haml (Duration: 0.3ms | Allocations: 158)
+  Rendered layout layouts/application.html.haml (Duration: 13.7ms | Allocations: 12097)
+Completed 200 OK in 171ms (Views: 14.2ms | ActiveRecord: 3.4ms | Allocations: 21122)
+
+
+Started GET "/lessons/vim-intro" for 127.0.0.1 at 2025-07-19 16:12:52 -0500
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"vim-intro"}
+  [1m[36mAuthem::Session Load (0.3ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:12:52.260234' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:12:52.262848"], ["updated_at", "2025-07-19 21:12:52.263259"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering lessons/show.html.haml within layouts/application
+  [1m[36mLesson Load (0.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/views/shared/_level_list.html.haml:5
+  Rendered shared/_level_list.html.haml (Duration: 14.3ms | Allocations: 8250)
+  Rendered lessons/show.html.haml within layouts/application (Duration: 20.4ms | Allocations: 14635)
+  Rendered layout layouts/application.html.haml (Duration: 20.5ms | Allocations: 14724)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.4ms | Allocations: 18336)
+
+
+
+ActionView::Template::Error - Couldn't find Lesson with 'id'=vim-intro:
+  activerecord (7.1.5.1) lib/active_record/core.rb:253:in `find'
+  decent_exposure (3.0.4) lib/decent_exposure/behavior.rb:54:in `find'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:75:in `call'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:75:in `handle_default_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:57:in `block in handle_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:84:in `fetch_ivar'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:53:in `handle_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:25:in `method_missing'
+  decent_exposure (3.0.4) lib/decent_exposure/behavior.rb:9:in `fetch'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:75:in `call'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:75:in `handle_default_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:57:in `block in handle_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:84:in `fetch_ivar'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:53:in `handle_flow_method'
+  decent_exposure (3.0.4) lib/decent_exposure/flow.rb:25:in `method_missing'
+  decent_exposure (3.0.4) lib/decent_exposure/exposure.rb:181:in `block in attribute'
+  decent_exposure (3.0.4) lib/decent_exposure/context.rb:58:in `instance_exec'
+  decent_exposure (3.0.4) lib/decent_exposure/context.rb:58:in `fetch_value'
+  decent_exposure (3.0.4) lib/decent_exposure/context.rb:23:in `get'
+  decent_exposure (3.0.4) lib/decent_exposure/attribute.rb:45:in `block (2 levels) in expose!'
+  decent_exposure (3.0.4) lib/decent_exposure/exposure.rb:72:in `lesson'
+  app/views/shared/_level_list.html.haml:5:in `_app_views_shared__level_list_html_haml___1595323583909305795_28860'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `public_send'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `_run'
+  actionview (7.1.5.1) lib/action_view/template.rb:261:in `block in render'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:208:in `instrument'
+  actionview (7.1.5.1) lib/action_view/template.rb:556:in `instrument_render_template'
+  actionview (7.1.5.1) lib/action_view/template.rb:249:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:252:in `block in render_partial_template'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:246:in `render_partial_template'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:83:in `render_partial_to_object'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:55:in `render_partial'
+  actionview (7.1.5.1) lib/action_view/helpers/rendering_helper.rb:44:in `render'
+  app/views/lessons/show.html.haml:2:in `_app_views_lessons_show_html_haml__48832775435622989_28840'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `public_send'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `_run'
+  actionview (7.1.5.1) lib/action_view/template.rb:261:in `block in render'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:208:in `instrument'
+  actionview (7.1.5.1) lib/action_view/template.rb:556:in `instrument_render_template'
+  actionview (7.1.5.1) lib/action_view/template.rb:249:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:11:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:135:in `block in _render_template'
+  actionview (7.1.5.1) lib/action_view/base.rb:290:in `in_rendering_context'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:134:in `_render_template'
+  actionpack (7.1.5.1) lib/action_controller/metal/streaming.rb:256:in `_render_template'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:121:in `render_to_body'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+  actionpack (7.1.5.1) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (7.1.5.1) lib/abstract_controller/rendering.rb:27:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:139:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:29:in `block (2 levels) in render'
+  benchmark (0.4.1) lib/benchmark.rb:324:in `realtime'
+  activesupport (7.1.5.1) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:29:in `block in render'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:98:in `cleanup_view_runtime'
+  activerecord (7.1.5.1) lib/active_record/railties/controller_runtime.rb:39:in `cleanup_view_runtime'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:28:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/implicit_render.rb:37:in `default_render'
+  actionpack (7.1.5.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+  actionpack (7.1.5.1) lib/abstract_controller/base.rb:224:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:165:in `process_action'
+  actionpack (7.1.5.1) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+  actiontext (7.1.5.1) lib/action_text/rendering.rb:23:in `with_renderer'
+  actiontext (7.1.5.1) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+  actionpack (7.1.5.1) lib/abstract_controller/callbacks.rb:258:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/rescue.rb:25:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+  activerecord (7.1.5.1) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+  actionpack (7.1.5.1) lib/abstract_controller/base.rb:160:in `process'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:40:in `process'
+  actionpack (7.1.5.1) lib/action_controller/metal.rb:227:in `dispatch'
+  actionpack (7.1.5.1) lib/action_controller/metal.rb:309:in `dispatch'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:124:in `each'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:882:in `call'
+  rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+  rack (3.1.16) lib/rack/etag.rb:29:in `call'
+  rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+  rack (3.1.16) lib/rack/head.rb:15:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+  rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+  rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+  activerecord (7.1.5.1) lib/active_record/migration.rb:655:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:39:in `tagged'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:139:in `tagged'
+  activesupport (7.1.5.1) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+  rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+  rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/static.rb:25:in `call'
+  rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+  railties (7.1.5.1) lib/rails/engine.rb:536:in `call'
+  puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+  puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+  puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+  puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+  puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+  puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+  puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Started POST "/__better_errors/28920/variables" for 127.0.0.1 at 2025-07-19 16:12:52 -0500
+Started GET "/lessons/vim-intro" for ::1 at 2025-07-19 16:14:04 -0500
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 7.2. (called from block in <top (required)> at /Users/mrogers/Documents/vimgenius/config/routes.rb:3)
+Processing by LessonsController#show as */*
+  Parameters: {"id"=>"vim-intro"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "xiovxqmltlonpwlpkllwljszqnrvwgmtudvvepcjpfbnnpzccnj@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "xiovxqmltlonpwlpkllwljszqnrvwgmtudvvepcjpfbnnpzccnj@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "remember_token", "password_reset_token", "session_token", "created_at", "updated_at", "temporary") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "xiovxqmltlonpwlpkllwljszqnrvwgmtudvvepcjpfbnnpzccnj@example.com"], ["password_digest", "[FILTERED]"], ["remember_token", nil], ["password_reset_token", "[FILTERED]"], ["session_token", nil], ["created_at", "2025-07-19 21:14:04.300582"], ["updated_at", "2025-07-19 21:14:04.300582"], ["temporary", true]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mAuthem::Session Create (0.7ms)[0m  [1m[32mINSERT INTO "authem_sessions" ("role", "subject_type", "subject_id", "token", "expires_at", "ttl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["role", "user"], ["subject_type", "User"], ["subject_id", 5], ["token", "Z3cxrBmgk93YqZV9hgiYdwi6lKqtobLTPBbK08czZhVAMoEj5xMVPbOLEU-g"], ["expires_at", "2025-08-18 21:14:04.302301"], ["ttl", 2592000], ["created_at", "2025-07-19 21:14:04.302280"], ["updated_at", "2025-07-19 21:14:04.302280"]]
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering lessons/show.html.haml within layouts/application
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  Rendered shared/_level_list.html.haml (Duration: 6.5ms | Allocations: 6493)
+  Rendered lessons/show.html.haml within layouts/application (Duration: 7.8ms | Allocations: 12822)
+  Rendered layout layouts/application.html.haml (Duration: 7.8ms | Allocations: 12911)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 11.8ms | Allocations: 27504)
+
+
+
+ActionView::Template::Error - undefined method `levels' for nil:
+  app/views/shared/_level_list.html.haml:5:in `_app_views_shared__level_list_html_haml___1595323583909305795_42740'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `public_send'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `_run'
+  actionview (7.1.5.1) lib/action_view/template.rb:261:in `block in render'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:208:in `instrument'
+  actionview (7.1.5.1) lib/action_view/template.rb:556:in `instrument_render_template'
+  actionview (7.1.5.1) lib/action_view/template.rb:249:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:252:in `block in render_partial_template'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:246:in `render_partial_template'
+  actionview (7.1.5.1) lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:83:in `render_partial_to_object'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:55:in `render_partial'
+  actionview (7.1.5.1) lib/action_view/helpers/rendering_helper.rb:44:in `render'
+  app/views/lessons/show.html.haml:2:in `_app_views_lessons_show_html_haml__48832775435622989_42720'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `public_send'
+  actionview (7.1.5.1) lib/action_view/base.rb:263:in `_run'
+  actionview (7.1.5.1) lib/action_view/template.rb:261:in `block in render'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:208:in `instrument'
+  actionview (7.1.5.1) lib/action_view/template.rb:556:in `instrument_render_template'
+  actionview (7.1.5.1) lib/action_view/template.rb:249:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+  actionview (7.1.5.1) lib/action_view/renderer/template_renderer.rb:11:in `render'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+  actionview (7.1.5.1) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:135:in `block in _render_template'
+  actionview (7.1.5.1) lib/action_view/base.rb:290:in `in_rendering_context'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:134:in `_render_template'
+  actionpack (7.1.5.1) lib/action_controller/metal/streaming.rb:256:in `_render_template'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:121:in `render_to_body'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+  actionpack (7.1.5.1) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (7.1.5.1) lib/abstract_controller/rendering.rb:27:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:139:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:29:in `block (2 levels) in render'
+  benchmark (0.4.1) lib/benchmark.rb:324:in `realtime'
+  activesupport (7.1.5.1) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:29:in `block in render'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:98:in `cleanup_view_runtime'
+  activerecord (7.1.5.1) lib/active_record/railties/controller_runtime.rb:39:in `cleanup_view_runtime'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:28:in `render'
+  actionpack (7.1.5.1) lib/action_controller/metal/implicit_render.rb:37:in `default_render'
+  actionpack (7.1.5.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+  actionpack (7.1.5.1) lib/abstract_controller/base.rb:224:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/rendering.rb:165:in `process_action'
+  actionpack (7.1.5.1) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+  actiontext (7.1.5.1) lib/action_text/rendering.rb:23:in `with_renderer'
+  actiontext (7.1.5.1) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+  actionpack (7.1.5.1) lib/abstract_controller/callbacks.rb:258:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/rescue.rb:25:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `block in instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+  activesupport (7.1.5.1) lib/active_support/notifications.rb:206:in `instrument'
+  actionpack (7.1.5.1) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+  actionpack (7.1.5.1) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+  activerecord (7.1.5.1) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+  actionpack (7.1.5.1) lib/abstract_controller/base.rb:160:in `process'
+  actionview (7.1.5.1) lib/action_view/rendering.rb:40:in `process'
+  actionpack (7.1.5.1) lib/action_controller/metal.rb:227:in `dispatch'
+  actionpack (7.1.5.1) lib/action_controller/metal.rb:309:in `dispatch'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:124:in `each'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+  actionpack (7.1.5.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+  actionpack (7.1.5.1) lib/action_dispatch/routing/route_set.rb:882:in `call'
+  rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+  rack (3.1.16) lib/rack/etag.rb:29:in `call'
+  rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+  rack (3.1.16) lib/rack/head.rb:15:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+  rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+  rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+  activerecord (7.1.5.1) lib/active_record/migration.rb:655:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (7.1.5.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:39:in `tagged'
+  activesupport (7.1.5.1) lib/active_support/tagged_logging.rb:139:in `tagged'
+  activesupport (7.1.5.1) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+  railties (7.1.5.1) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+  rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+  rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/static.rb:25:in `call'
+  rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+  actionpack (7.1.5.1) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+  railties (7.1.5.1) lib/rails/engine.rb:536:in `call'
+  puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+  puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+  puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+  puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+  puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+  puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+  puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Started GET "/lessons/vim-intro" for ::1 at 2025-07-19 16:14:57 -0500
+Processing by LessonsController#show as */*
+  Parameters: {"id"=>"vim-intro"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "huupezawspxlgqtxrlquxqqnafsgfaumowvqfpdqajrprglqmtq@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "huupezawspxlgqtxrlquxqqnafsgfaumowvqfpdqajrprglqmtq@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "remember_token", "password_reset_token", "session_token", "created_at", "updated_at", "temporary") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "huupezawspxlgqtxrlquxqqnafsgfaumowvqfpdqajrprglqmtq@example.com"], ["password_digest", "[FILTERED]"], ["remember_token", nil], ["password_reset_token", "[FILTERED]"], ["session_token", nil], ["created_at", "2025-07-19 21:14:57.313311"], ["updated_at", "2025-07-19 21:14:57.313311"], ["temporary", true]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mAuthem::Session Create (0.7ms)[0m  [1m[32mINSERT INTO "authem_sessions" ("role", "subject_type", "subject_id", "token", "expires_at", "ttl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["role", "user"], ["subject_type", "User"], ["subject_id", 6], ["token", "TKtjB9pLiusKLiIaW_f18mku1jtEjdMPG15xfad0qmQFVd08ajH9hXxj0BUu"], ["expires_at", "2025-08-18 21:14:57.314531"], ["ttl", 2592000], ["created_at", "2025-07-19 21:14:57.314511"], ["updated_at", "2025-07-19 21:14:57.314511"]]
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering lessons/show.html.haml within layouts/application
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 ORDER BY sequence_number asc[0m  [["lesson_id", 3]]
+  ↳ app/views/shared/_level_list.html.haml:5
+  Rendered shared/_level_list.html.haml (Duration: 7.1ms | Allocations: 10598)
+/Users/mrogers/.rbenv/versions/3.3.8/lib/ruby/gems/3.3.0/gems/tilt-2.6.1/lib/tilt/redcarpet.rb:30: warning: undefining the allocator of T_DATA class Redcarpet::Markdown
+  [1m[36mLevel Load (0.3ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 ORDER BY sequence_number asc LIMIT $2[0m  [["lesson_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:6:in `block in <class:LessonsController>'
+  [1m[36mCommand Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `split_array_in_half'
+  [1m[36mCACHE Command Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `each_slice'
+  [1m[36mCommand Load (0.2ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `each_slice'
+  Rendered lessons/show.html.haml within layouts/application (Duration: 16.5ms | Allocations: 21289)
+  Rendered shared/_login.html.haml (Duration: 1.0ms | Allocations: 5159)
+  Rendered layout layouts/application.html.haml (Duration: 21.2ms | Allocations: 42489)
+Completed 200 OK in 209ms (Views: 14.8ms | ActiveRecord: 9.0ms | Allocations: 48988)
+
+
+Started GET "/" for ::1 at 2025-07-19 16:15:05 -0500
+Processing by HomeController#index as */*
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zrfhehlgysrivryekmmhmaqoiulgzxgytesodcbsdvxbjwvyfkh@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zrfhehlgysrivryekmmhmaqoiulgzxgytesodcbsdvxbjwvyfkh@example.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "remember_token", "password_reset_token", "session_token", "created_at", "updated_at", "temporary") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "zrfhehlgysrivryekmmhmaqoiulgzxgytesodcbsdvxbjwvyfkh@example.com"], ["password_digest", "[FILTERED]"], ["remember_token", nil], ["password_reset_token", "[FILTERED]"], ["session_token", nil], ["created_at", "2025-07-19 21:15:05.665001"], ["updated_at", "2025-07-19 21:15:05.665001"], ["temporary", true]]
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `create_temporary'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mAuthem::Session Create (0.6ms)[0m  [1m[32mINSERT INTO "authem_sessions" ("role", "subject_type", "subject_id", "token", "expires_at", "ttl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["role", "user"], ["subject_type", "User"], ["subject_id", 7], ["token", "Mx2eBAfd95-sMKNmX8Ux0kVKJK3lpldWFiChdgEag7jgL9Kbatjsw1NdVkDF"], ["expires_at", "2025-08-18 21:15:05.666682"], ["ttl", 2592000], ["created_at", "2025-07-19 21:15:05.666662"], ["updated_at", "2025-07-19 21:15:05.666662"]]
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (Duration: 1.3ms | Allocations: 6886)
+  Rendered shared/_login.html.haml (Duration: 0.1ms | Allocations: 185)
+  Rendered layout layouts/application.html.haml (Duration: 3.4ms | Allocations: 15338)
+Completed 200 OK in 190ms (Views: 3.9ms | ActiveRecord: 3.0ms | Allocations: 22099)
+
+
+Started GET "/lessons/vim-intro" for 127.0.0.1 at 2025-07-19 16:15:24 -0500
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"vim-intro"}
+  [1m[36mAuthem::Session Load (0.5ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:24.265894' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.3ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:24.269476"], ["updated_at", "2025-07-19 21:15:24.269982"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  Rendering layout layouts/application.html.haml
+  Rendering lessons/show.html.haml within layouts/application
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.3ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 ORDER BY sequence_number asc[0m  [["lesson_id", 3]]
+  ↳ app/views/shared/_level_list.html.haml:5
+  Rendered shared/_level_list.html.haml (Duration: 3.0ms | Allocations: 1203)
+  [1m[36mLevel Load (0.4ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 ORDER BY sequence_number asc LIMIT $2[0m  [["lesson_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:6:in `block in <class:LessonsController>'
+  [1m[36mCommand Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `split_array_in_half'
+  [1m[36mCACHE Command Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `each_slice'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/helpers/application_helper.rb:34:in `each_slice'
+  Rendered lessons/show.html.haml within layouts/application (Duration: 9.9ms | Allocations: 3757)
+  Rendered shared/_login.html.haml (Duration: 0.2ms | Allocations: 157)
+  Rendered layout layouts/application.html.haml (Duration: 30.6ms | Allocations: 12115)
+Completed 200 OK in 43ms (Views: 29.4ms | ActiveRecord: 4.6ms | Allocations: 15693)
+
+
+Started GET "/lessons/vim-intro/levels/level-1" for 127.0.0.1 at 2025-07-19 16:15:26 -0500
+Processing by LevelsController#show as HTML
+  Parameters: {"lesson_id"=>"vim-intro", "id"=>"level-1"}
+  [1m[36mAuthem::Session Load (0.2ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:26.212511' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (0.9ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:26.214357"], ["updated_at", "2025-07-19 21:15:26.214608"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.3ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.8ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendering layout layouts/application.html.haml
+  Rendering levels/show.html.haml within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 ORDER BY sequence_number asc[0m  [["lesson_id", 3]]
+  ↳ app/views/shared/_level_list.html.haml:5
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCACHE Lesson Load (0.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mCACHE Level Load (0.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  Rendered shared/_level_list.html.haml (Duration: 7.1ms | Allocations: 7260)
+  Rendered shared/_command.html.haml (Duration: 8.8ms | Allocations: 17165)
+  Rendered levels/show.html.haml within layouts/application (Duration: 37.5ms | Allocations: 39378)
+  Rendered shared/_login.html.haml (Duration: 0.2ms | Allocations: 182)
+  Rendered layout layouts/application.html.haml (Duration: 40.6ms | Allocations: 47573)
+Completed 200 OK in 64ms (Views: 41.5ms | ActiveRecord: 5.2ms | Allocations: 56196)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/22?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:31 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"22"}
+  [1m[36mAuthem::Session Load (0.4ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:31.296574' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:31.301445"], ["updated_at", "2025-07-19 21:15:31.301915"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.3ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (1.9ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 22]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.3ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.2ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 8.4ms | Allocations: 13507)
+Completed 200 OK in 57ms (Views: 9.2ms | ActiveRecord: 12.7ms | Allocations: 26930)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/25?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:33 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"25"}
+  [1m[36mAuthem::Session Load (0.7ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:33.199380' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:33.203872"], ["updated_at", "2025-07-19 21:15:33.204431"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.6ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 25]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.7ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.0ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 4.2ms | Allocations: 2687)
+Completed 200 OK in 38ms (Views: 4.7ms | ActiveRecord: 12.6ms | Allocations: 11544)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/22?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:37 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"22"}
+  [1m[36mAuthem::Session Load (0.8ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:37.850604' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:37.855327"], ["updated_at", "2025-07-19 21:15:37.855880"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.4ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 22]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.7ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.1ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 5.7ms | Allocations: 2688)
+Completed 200 OK in 41ms (Views: 6.3ms | ActiveRecord: 12.7ms | Allocations: 11554)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/28?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:46 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"28"}
+  [1m[36mAuthem::Session Load (0.4ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:46.312553' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.7ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:46.315298"], ["updated_at", "2025-07-19 21:15:46.315633"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (1.7ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 28]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.3ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (0.7ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 3.2ms | Allocations: 2698)
+Completed 200 OK in 29ms (Views: 3.5ms | ActiveRecord: 7.7ms | Allocations: 11568)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/33?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:48 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"33"}
+  [1m[36mAuthem::Session Load (0.7ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:48.431765' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.5ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:48.434737"], ["updated_at", "2025-07-19 21:15:48.434972"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (1.0ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (1.8ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 33]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.0ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 2.7ms | Allocations: 2721)
+Completed 200 OK in 25ms (Views: 2.9ms | ActiveRecord: 11.3ms | Allocations: 11592)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/33?mastered=true" for 127.0.0.1 at 2025-07-19 16:15:49 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"33"}
+  [1m[36mAuthem::Session Load (0.8ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:15:49.783242' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.6ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:15:49.787985"], ["updated_at", "2025-07-19 21:15:49.788594"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.7ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (3.1ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 33]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (0.9ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 5.0ms | Allocations: 2687)
+Completed 200 OK in 41ms (Views: 5.6ms | ActiveRecord: 13.5ms | Allocations: 11549)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/32?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:02 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"32"}
+  [1m[36mAuthem::Session Load (0.4ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:02.264743' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.3ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:02.268683"], ["updated_at", "2025-07-19 21:16:02.269216"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.2ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (1.6ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 32]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.4ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.2ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 3.9ms | Allocations: 2687)
+Completed 200 OK in 28ms (Views: 4.4ms | ActiveRecord: 6.7ms | Allocations: 11555)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/24?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:04 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"24"}
+  [1m[36mAuthem::Session Load (0.7ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:04.238500' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.6ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:04.243099"], ["updated_at", "2025-07-19 21:16:04.243686"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.3ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 24]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.1ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 4.7ms | Allocations: 2687)
+Completed 200 OK in 38ms (Views: 5.3ms | ActiveRecord: 12.4ms | Allocations: 11549)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/23?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:05 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"23"}
+  [1m[36mAuthem::Session Load (0.9ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:05.468166' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.6ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:05.473116"], ["updated_at", "2025-07-19 21:16:05.473681"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.8ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 23]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.8ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.3ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 8.8ms | Allocations: 2710)
+Completed 200 OK in 57ms (Views: 9.5ms | ActiveRecord: 13.9ms | Allocations: 11561)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/26?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:12 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"26"}
+  [1m[36mAuthem::Session Load (0.3ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:12.908395' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (1.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:12.911570"], ["updated_at", "2025-07-19 21:16:12.911832"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (1.9ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 26]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.3ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.3ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 2.2ms | Allocations: 2687)
+Completed 200 OK in 26ms (Views: 2.4ms | ActiveRecord: 8.0ms | Allocations: 11554)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/35?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:15 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"35"}
+  [1m[36mAuthem::Session Load (0.8ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:15.167404' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.5ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:15.172044"], ["updated_at", "2025-07-19 21:16:15.172594"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.4ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.1ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 35]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.1ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 4.5ms | Allocations: 2688)
+Completed 200 OK in 39ms (Views: 5.1ms | ActiveRecord: 12.0ms | Allocations: 11544)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/28?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:26 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"28"}
+  [1m[36mAuthem::Session Load (0.7ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:26.269466' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.5ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:26.274074"], ["updated_at", "2025-07-19 21:16:26.274634"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.6ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 28]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.3ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 5.2ms | Allocations: 2687)
+Completed 200 OK in 40ms (Views: 5.7ms | ActiveRecord: 13.0ms | Allocations: 11550)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/26?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:33 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"26"}
+  [1m[36mAuthem::Session Load (0.8ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:33.033586' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.5ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:33.038605"], ["updated_at", "2025-07-19 21:16:33.039243"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.3ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 26]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.2ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 5.1ms | Allocations: 2687)
+Completed 200 OK in 41ms (Views: 5.7ms | ActiveRecord: 12.7ms | Allocations: 11587)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/30?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:36 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"30"}
+  [1m[36mAuthem::Session Load (0.9ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:36.537618' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.6ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:36.542249"], ["updated_at", "2025-07-19 21:16:36.542758"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.2ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 30]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.6ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.2ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 6.8ms | Allocations: 2709)
+Completed 200 OK in 50ms (Views: 7.4ms | ActiveRecord: 12.4ms | Allocations: 11599)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/25?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:37 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"25"}
+  [1m[36mAuthem::Session Load (0.7ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:37.780116' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.4ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:37.784696"], ["updated_at", "2025-07-19 21:16:37.785241"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.3ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 25]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.1ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 5.4ms | Allocations: 2687)
+Completed 200 OK in 39ms (Views: 6.0ms | ActiveRecord: 11.9ms | Allocations: 11549)
+
+
+Started GET "/lessons/vim-intro/levels/level-1/commands/30?mastered=true" for 127.0.0.1 at 2025-07-19 16:16:39 -0500
+Processing by CommandsController#show as */*
+  Parameters: {"mastered"=>"true", "lesson_id"=>"vim-intro", "level_id"=>"level-1", "id"=>"30"}
+  [1m[36mAuthem::Session Load (0.9ms)[0m  [1m[34mSELECT "authem_sessions".* FROM "authem_sessions" WHERE "authem_sessions"."expires_at" >= '2025-07-19 21:16:39.479761' AND "authem_sessions"."role" = $1 AND "authem_sessions"."token" = $2 LIMIT $3[0m  [["role", "user"], ["token", "fu0jmBvDQ-3FABBNRNfvsxF7uWNk6Eia8hx6d-6dq8hdQLW_mZv1JePxICpK"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mAuthem::Session Update (2.3ms)[0m  [1m[33mUPDATE "authem_sessions" SET "expires_at" = $1, "updated_at" = $2 WHERE "authem_sessions"."id" = $3[0m  [["expires_at", "2025-08-18 21:16:39.484412"], ["updated_at", "2025-07-19 21:16:39.484918"], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `create_temp_user'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/commands_controller.rb:30:in `save_command_if_completed_on_time'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mUser::HABTM_Commands Create (2.2ms)[0m  [1m[32mINSERT INTO "commands_users" ("user_id", "command_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["command_id", 30]]
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:14:in `save_command'
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."slug" = $1 ORDER BY "lessons"."id" ASC LIMIT $2[0m  [["slug", "vim-intro"], ["LIMIT", 1]]
+  ↳ app/models/lesson.rb:11:in `find_by_slug'
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."lesson_id" = $1 AND "levels"."slug" = $2 ORDER BY sequence_number asc LIMIT $3[0m  [["lesson_id", 3], ["slug", "level-1"], ["LIMIT", 1]]
+  ↳ app/models/level.rb:17:in `find_by_slug'
+  [1m[36mCommand Load (0.5ms)[0m  [1m[34mSELECT "commands".* FROM "commands" WHERE "commands"."level_id" = $1[0m  [["level_id", 5]]
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  [1m[36mCommand Load (1.1ms)[0m  [1m[34mSELECT commands.id, count(commands.id) as command_count FROM "commands" INNER JOIN "commands_users" ON "commands_users"."command_id" = "commands"."id" INNER JOIN "users" ON "users"."id" = "commands_users"."user_id" WHERE (users.id = 4) GROUP BY "commands"."id" HAVING (count(commands.id) >= 2)[0m
+  ↳ app/models/user.rb:23:in `commands_remaining_for_level'
+  Rendered shared/_command.html.haml (Duration: 4.8ms | Allocations: 2690)
+Completed 200 OK in 35ms (Views: 5.3ms | ActiveRecord: 11.9ms | Allocations: 11568)
+
+

@@ -15,7 +15,12 @@ test: &test
   <<: *global
 
 production:
-  database: vim_genius_production
+  url: <%= ENV['DATABASE_URL'] %>
+  database: vimgenius_production
+  username: vimgenius
+  password: vimgenius_password
+  host: db
+  port: 5432
   <<: *global
 
 cucumber:

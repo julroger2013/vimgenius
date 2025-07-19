@@ -1,10 +1,12 @@
 class LevelsController < ApplicationController
-  expose(:lesson) { Lesson.find_by_slug(params[:lesson_id]) }
-  expose(:levels) { lesson.levels }
-  expose(:level, attributes: :level_params, finder: :find_by_slug)
-  expose(:commands)   { level.commands }
-  expose(:command)      { commands.first }
-  expose(:next_level) { level.next_level }
+  expose :lesson, -> { Lesson.find_by_slug(params[:lesson_id]) }
+  expose :levels, -> { lesson.levels }
+  expose :level do
+    levels.find_by_slug(params[:id])
+  end
+  expose :commands, -> { level.commands }
+  expose :command, -> { commands.first }
+  expose :next_level, -> { level.next_level }
 
   def show
     commands = current_user.commands_remaining_for_level(level)

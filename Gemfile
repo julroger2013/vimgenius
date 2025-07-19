@@ -1,34 +1,35 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
-gem 'rails', '4.0.0'
+ruby "3.3.8"
+gem 'rails', '~> 7.1.0'
+gem 'puma', '~> 6.0'
 
 gem 'authem'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'decent_exposure'
+gem 'bootsnap', require: false
+gem 'sassc-rails'
+gem 'decent_exposure', '~> 3.0'
 gem 'fabrication'
 gem 'formal'
-gem 'haml-rails'
-gem 'jbuilder', '~> 1.0.1'
+gem 'haml-rails', '~> 2.0'
+gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
-gem 'pg'
-gem 'poltergeist'
+gem 'pg', '~> 1.1'
+gem 'selenium-webdriver'
 gem 'redcarpet'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails'
+gem 'terser'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :development, :test do
-  gem 'dotenv-rails'
-  gem 'pry-rails'
-  gem 'rspec-rails'
+  gem 'dotenv-rails', '~> 3.0'
+  gem 'pry-rails', '~> 0.3.11'
+  gem 'rspec-rails', '~> 6.0'
 end
 
 group :test do
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
+  gem 'cucumber-rails', '~> 3.0', require: false
+  gem 'database_cleaner-active_record'
   gem 'launchy'
 end

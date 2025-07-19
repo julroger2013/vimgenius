@@ -3,7 +3,7 @@ class UiController < ApplicationController
     define_method(filename) {}
   end
 
-  skip_before_filter :require_user
+  # skip_before_action :require_user # Not needed for UI controller
   layout :choose_layout
 
   private

@@ -1,4 +1,4 @@
-class CreateUserLessons < ActiveRecord::Migration
+class CreateUserLessons < ActiveRecord::Migration[4.2]
   def change
     create_table :user_lessons do |t|
       t.references :user, index: true
