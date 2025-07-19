@@ -11,10 +11,10 @@ You need to set up your own repository for deployment:
 ```bash
 # Option A: Create a new repository on GitHub, then:
 git remote remove origin
-git remote add origin https://github.com/YOUR_USERNAME/vimgenius.git
+git remote add origin https://github.com/julroger2013/vimgenius.git
 
 # Option B: Fork the original repository on GitHub, then:
-git remote set-url origin https://github.com/YOUR_USERNAME/vimgenius.git
+git remote set-url origin https://github.com/julroger2013/vimgenius.git
 ```
 
 ### 2. Commit and Push Changes
@@ -40,7 +40,7 @@ pct exec 110 -- apt-get update
 pct exec 110 -- apt-get install -y git docker.io docker-compose sshpass
 
 # Clone your repository
-pct exec 110 -- git clone https://github.com/YOUR_USERNAME/vimgenius.git /opt/vimgenius
+pct exec 110 -- git clone https://github.com/julroger2013/vimgenius.git /opt/vimgenius
 ```
 
 ### 2. Configure Environment

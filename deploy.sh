@@ -23,6 +23,9 @@ echo -e "${YELLOW}📡 Connecting to Proxmox server...${NC}"
 
 # Deploy to server
 sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no root@$PROXMOX_HOST << EOF
+echo "🔄 Setting up repository if needed..."
+pct exec $CONTAINER_ID -- bash -c 'if [ ! -d $APP_DIR ]; then git clone https://github.com/julroger2013/vimgenius.git $APP_DIR; fi'
+
 echo "🔄 Pulling latest code..."
 pct exec $CONTAINER_ID -- bash -c 'cd $APP_DIR && git pull origin master'
 
